@@ -1,0 +1,19 @@
+_schema-version: "2.1"
+ID: MANOJ_DB1_PROJ
+version: 0.0.1
+modules:
+- name: MANOJ_DB1
+  type: hdb
+  path: MANOJ_DB1
+  requires:
+  - name: hdi_MANOJ_DB1
+    properties:
+      TARGET_CONTAINER: ~{hdi-container-name}
+resources:
+- name: hdi_MANOJ_DB1
+  type: com.sap.xs.hdi-container
+  parameters:
+    config:
+      schema: MANOJ_DB1_SCH
+  properties:
+    hdi-container-name: ${service-name}
